@@ -1,0 +1,94 @@
+GIS Practical 8: Advanced GIS Operations 1
+Open QGIS and select Project -> New  (save the file too)
+======================================================================================================
+A) Nearest Neighbor Analysis
+======================================================================================================
+1. Layer -> Add Layer -> Add Delimited Text Layer
+	EarthQuakeDatabase.txt
+	Custom delimiter: tab
+	Point coordinate geometry type, x long, y lat
+2. Layer -> Add Layer -> Add Vector Layer
+	ne_10m_admin_0_countries.zip
+3. Processing -> Toolbox
+	1. Remove null geometries( in Vector Geometry)
+		Select also remove empty geometries
+		Click run
+	2. Distance to nearest hub(line to hub)( in Vector Analysis)
+		Select ne_10m_admin_0_countries as destination hub
+		Select name as hub layer name attribute
+		Select km as unit
+		Save it
+		Click Run
+======================================================================================================
+B) Sampling Raster Data using Points or Polygons 
+======================================================================================================
+1. Add Raster Layer
+	us.tmax_nohads_ll_20140525_float.tif
+2. Add Delimited Text Layer
+	2013_Gaz_ua_national.txt
+	Custom delimiter: tab
+	Point coordinate geometry type, x intptlong, y intptlat
+3. Processing -> Toolbox
+	1. Simple Raster Values( in Raster Analysis)
+		Select raster layer us.tmax_nohads_ll_20140525_float
+		Output Column as tmax_
+		Click run
+4. Remove both sampled and 2013_Gaz_ua_national layer
+5. Add Vector Layer
+	tl_2018_us_county.zip
+6. Processing -> Toolbox
+	1. Zonal Statistics( in Raster Analysis)
+		Select raster layer us.tmax_nohads_ll_20140525_float
+		Output Column as tmax_
+		select on mean for statistics to calculate
+		Click run
+7. Use Identify Feature tool 
+	Click on any area.
+	View tmax_mean at end
+8. Double click Zonal Statistics layer and go to symbology tab
+	Select Graduated
+	Select tmax_mean as value
+	Select color to red
+	Classify
+	Apply and ok
+
+======================================================================================================
+C) Interpolating Point Data
+======================================================================================================
+1. Add Vector Layer
+	Arlington_Soundings_2007_stpl83.shp
+	Boundary2004_550_stpl83.shp
+	Islands_2004_550_stpl83.shp
+2. Processing -> Toolbox
+	1. TIN Interpolation( in Interpolation)
+		a)Vector Layer: Arlington_Soundings_2007_stpl83
+		  Interpolation attr: Elevation
+		  Press +(Input layer)
+		  type: Points
+		b)Vector Layer: Islands_2004_550_stpl83
+		  Interpolation attr: Elevation
+		  Press +(Input layer)
+		  type: Break Lines 
+		Extent -> Calculate from Layer -> Boundary2004_550_stpl83
+		Pixel s: 5
+		Save (e.g., Elevation_tin)
+		Click run
+	2. Clip raster by mask layer (in GDAL -> Raster extraction)
+		Mask Layer: Boundary2004_550_stpl83
+		Save (e.g., Elevation_tin_clipped)
+		Click Run
+3. Double click Elevation_tin_clipped layer and go to symbology tab
+	Select Singleband Pseudocolor
+	Classify
+	Apply and ok 
+4. Processing -> Toolbox
+	1. Contour (in GDAL -> Raster extraction)
+		Input Layer: Elevation_tin_clipped
+		Interval: 5
+		Save (e.g., Elevation_tin_clipped_contour)
+		Click Run
+5. Double click Elevation_tin_clipped layer and go to Label tab
+	Select single labels
+	Select ELEV as value
+	In Placement -> Mode: Curved
+	Apply and ok

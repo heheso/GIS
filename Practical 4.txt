@@ -1,0 +1,29 @@
+GIS Practical 4 Attribute Management and Terrain Analysis
+Open QGIS and select Project -> New  (save the file too)
+======================================================================================================
+A) Working with Attributes
+======================================================================================================
+1. Go to Layer -> Add Layer -> Add Vector Layer
+	ne_10m_populated_places_simple.zip/.shp
+2. Right-click the layer in the Layer Panel and select Open Attribute Table
+	Click on the pop_max column to sort and find places with the highest population
+	Click the Select features using an expression button (epsilon symbol $\epsilon$)
+		pop_max > 100 and pop_max < 10000
+		pop_max > 100 and pop_max < 10000 and "sov0name" = 'India'
+======================================================================================================
+B) Terrain Data and Hillshade Analysis
+====================================================================================================== 
+1. Go to Layer -> Add Raster Layer and select 10n060e_20101117_gmted_mea300.tif
+2. Locate Mt. Everest: At the bottom of QGIS, enter the coordinates 27.99, 86.93 and set the Scale to 1:1,000,000
+3. Go to Raster -> Extraction -> Clip Raster by Extent
+	Select Use Canvas Extent to clip the visible area
+	Save the file as Clipped_Himalay_Region.tif and click Run
+4. Go to Raster -> Extraction -> Contour
+	Input layer: Select your clipped raster
+	Interval: Set the interval between contour lines to 100.0 meters
+	Attribute name: Ensure it is set to ELEV
+	Click Run
+5. Labeling: Right-click the new Contour layer -> Properties -> Labels. Set to Single labels using the ELEV field
+6. Right-click the contour layer in the Layer Panel and select Open Attribute Table
+	Arrange the table in descending order based on the value of “ELEV” column
+	Select the row with highest elev and click on zoom map to selected rows(magnifying glass)
