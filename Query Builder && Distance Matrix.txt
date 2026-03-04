@@ -1,0 +1,64 @@
+========================================================== **Part 1: Setting up the Data (The Prerequisites)** ===============================================================
+
+-----------------------------If dataset is provided then just load it and move to PART 2 -----------------------------------
+
+if not:
+To make the Query Builder and Distance Matrix work, you need specific types of data. The Distance Matrix *strictly requires point layers*.
+
+1. **Create Two Point Layers: Go to Layer > Create Layer > New Shapefile Layer.
+* Create Layer 1: `Homes` (Geometry: Point). Add a new field called `Home_ID` (Whole Number) and `Residents` (Whole Number).
+* Create Layer 2: `Hospitals` (Geometry: Point). Add a new field called `Hosp_ID` (Whole Number) and `Type` (Text Data).
+
+
+* Toggle editing for `Homes`, drop 4-5 points on residential buildings. In the attribute table, assign them IDs (1, 2, 3...) and a number of residents (e.g., 4, 6, 2).
+* Toggle editing for `Hospitals`, drop 2-3 points on nearby clinics/hospitals. Give them IDs (101, 102...) and Types (e.g., 'Govt', 'Private').
+
+
+---------------------------- VIMP: Save your edits and stop toggling. -----------------------------------------
+
+
+===================================================== Part 2: a) Queries using Query Builder =============================================
+
+Filter your map to only show features that match specific criteria based on their attribute data.
+A GIS database can hold thousands of records. The Query Builder uses SQL (Structured Query Language) logic to instantly filter the map. Instead of manually looking for "Government Hospitals," you ask the software to isolate them for you.
+
+**Step-by-Step Execution:
+
+1. **Open the Query Builder: Action: 
+ - Right-click your `Hospitals` layer in the Layers Panel and select **Properties**. > **Source** tab on the left.
+ - Click the **Query Builder** button at the bottom right.(make sure to save everthing first or the option will be disabled) 
+
+2.  **Build Your Expression:**
+[IF THE DATASET IS PROVIDED SELECT ONE OF THEIR ATTRIBUTES]
+OR
+ - In the Fields box, double-click `"Type"`. It will appear in the bottom text box.
+ - Click the `=` operator.
+ - In the Values box, click **All** to see your data, then double-click `'Govt'`.
+ - Your final expression at the bottom should look like this: `"Type" = 'Govt'`
+
+3. **Apply the Query:**
+ - Click **Test** to ensure it works (it will tell you how many rows match). Click **OK**, then **OK** again.
+ - Result:* Look at your map. All 'Private' hospitals will disappear! Your layer is now filtered. (To undo this, just go back to the Query Builder and click "Clear").
+
+
+========================================================== Part 3: b) Use of Distance Matrix =============================================================
+
+Calculate the exact straight-line distance from every single point in Layer A to every single point in Layer B.
+This is a core spatial analysis tool. Urban planners use it to figure out things like, "What is the distance from every house in this ward to the nearest fire station?"
+
+**Step-by-Step Execution:**
+
+1. Open the Tool:
+ - Go to the top menu bar, click **Vector** > **Analysis Tools** > **Distance Matrix**. 
+
+2.  **Set the Parameters:
+ - Input point layer: Select `Homes`.
+ - Input unique ID field: Select `Home_ID`. *(This is why we created IDs in Part 1!)*
+ - Target point layer: Select `Hospitals`.
+ - Target unique ID field: Select `Hosp_ID`.
+ - Output matrix type: Select **Linear (N*k x 3) distance matrix**. This is the standard output that creates a clean, easy-to-read table.
+
+3. **Run and View Results:
+ - Under "Distance matrix" at the bottom, you can leave it as a temporary layer or save it to a file. Click **Run**.
+ - Result:* A new layer (which is actually just a table) will appear in your Layers Panel. Right-click it and **Open Attribute Table**. You will see a list showing the exact distance from `Home_ID 1` to `Hosp_ID 101`, `Home_ID 1` to `Hosp_ID 102`, and so on!
+
