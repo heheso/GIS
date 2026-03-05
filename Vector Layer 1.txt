@@ -1,0 +1,166 @@
+================================================
+Step 1 — Create Area Layer
+================================================
+Go to Layer → Create Layer → New Shapefile Layer
+
+Geometry Type: Polygon
+
+Add fields:
+id (Integer)
+name (Text)
+
+Add 4 Areas
+
+Example:
+id	name
+1	Green Valley
+2	Sunrise Colony
+3	Lake View
+4	Hill Park
+
+================================================
+Step 2 — Create Garden Layer
+================================================
+Create new shapefile
+
+Geometry Type: Polygon
+
+Fields:
+id
+name
+
+Add 4 Gardens
+
+Example:
+id	name
+1	Central Garden
+2	Rose Park
+3	Lake Garden
+4	Children Park
+
+================================================
+Step 3 — Create Highway Layer
+================================================
+Create shapefile
+
+Geometry: Line
+
+Fields:
+id
+name
+
+Add 2 highways
+
+Example:
+id	name
+1	Western Highway
+2	City Expressway
+
+================================================
+Step 4 — Railway Track Layer
+================================================
+Create shapefile
+
+Geometry: Line
+
+Fields:
+id
+name
+line
+
+Example:
+id	name		line
+1	Central Track	Central Line
+2	Harbour Track	Harbour Line
+
+================================================
+Step 5 — Railway Station Layer
+================================================
+Create shapefile
+
+Geometry: Point
+
+Fields:
+id
+name
+line
+
+Add 5 stations
+
+Example:
+id	name		line
+1	Central Station	Central Line
+2	City Junction	Central Line
+3	Lake Station	Central Line
+4	Harbour Station	Harbour Line
+5	Port Station	Harbour Line
+
+================================================
+Step 6 — Restaurants Layer
+================================================
+Create shapefile
+
+Geometry: Point
+
+Fields:
+id
+name
+
+Example:
+id	name
+1	Garden Cafe
+2	Lake Restaurant
+3	City Diner
+4	Food Plaza
+5	Green Bites
+
+⚠ Important:
+Place at least 2 restaurants inside garden polygons.
+
+================================================
+Step 7 — Hospitals Layer
+================================================
+Create shapefile
+
+Geometry: Point
+
+Fields:
+id
+name
+
+Add 5 hospitals
+
+Example:
+id	name
+1	City Hospital
+2	Sunrise Medical
+3	Green Valley Clinic
+4	Metro Care
+5	LifeCare Hospital
+
+================================================
+Step 8 — Buildings / Business Park Layer
+================================================
+Create shapefile
+
+Geometry: Polygon
+
+Fields:
+id
+name
+
+Add 10 buildings
+
+Example:
+id	name
+1	A Wing
+2	B Wing
+3	C Tower
+4	Lake Apartments
+5	Metro Mall
+6	Tech Park
+7	Business Center
+8	City Plaza
+9	Hill Residency
+10	Sky Tower
+

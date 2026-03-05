@@ -1,0 +1,180 @@
+================================================
+Step 1 — Add a Highway
+================================================
+Go to Layer → Create Layer → New Shapefile Layer
+
+Geometry Type: Line
+
+Add field:
+id (Text)
+
+Draw one long road across the map.
+
+Enter attribute:
+id
+375
+
+================================================
+Step 2 — Add 6 Farms
+================================================
+Farms are polygons.
+
+Create Layer
+
+Geometry: Polygon
+
+Fields:
+Field		Type
+id		Integer
+name	Text
+
+Example:
+id	name
+1	farm 1
+2	farm 2
+3	farm 3
+4	farm 4
+5	farm 5
+6	farm 6
+
+⚠ Ensure 2 farms are near the highway.
+
+================================================
+Step 3 — Add 4 Narrow Paths Between Farms
+================================================
+Create shapefile
+
+Geometry: Line
+
+Fields:
+id
+
+Add 4 paths
+
+Example:
+id	
+1	
+2	
+3
+4
+
+================================================
+Step 4 — Add Main Road
+================================================
+Create shapefile
+
+Geometry: Line
+
+Fields:
+id
+
+Example:
+id
+1
+
+================================================
+Step 5 — Add 2 Farm Houses
+================================================
+Create shapefile
+
+Geometry: Point
+
+Fields:
+id
+name
+
+Example:
+id	name
+1	fh1
+2	fh5
+
+================================================
+Step 6 — Add 4 Residential Areas
+================================================
+Create shapefile
+
+Geometry: Polygon
+
+Fields:
+id
+
+Example:
+id	
+1	
+2	
+3	
+4	
+
+================================================
+Step 7 — Add Two Primary Schools
+================================================
+Create Point layer
+
+Fields:
+
+| id | name |
+
+Example:
+
+id	name
+1	ZP School
+2	Village Primary School
+
+Place them near residential areas.
+
+================================================
+Step 8 — Add Bus Stop and Auto Stand
+================================================
+Create Point layer
+
+Fields:
+
+| id | name |
+
+Example:
+
+id	name
+1	Bus Stop
+2	Auto Stand
+
+Place near the main road
+
+================================================
+Step 9 — Add Grampanchayat Office
+================================================
+Create Point layer
+
+Fields:
+
+| id | name |
+
+Example:
+
+id	name
+1	Grampanchayat Office
+
+Place it near residential area or central location
+
+================================================
+Step 10 — Add 4 Wells
+================================================
+Create Point layer
+
+Field:
+
+| id |
+
+Add wells:
+
+id	location
+1	Farm
+2	Farm
+3	Farm
+4	Residential area
+
+Place:
+
+✔ 3 wells inside farm polygons
+✔ 1 well inside residential area
+
+
