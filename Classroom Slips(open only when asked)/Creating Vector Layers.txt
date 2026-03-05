@@ -1,0 +1,48 @@
+Open QGIS.
+
+Go to plugins > manage and install plugins > search and download QuickMapservices 
+Go to Web > QuickMapServices >Setitngs > a window will open > Click on "Get Contributed Pack"[bottom] > okay/save
+Go to Web > QuickMapServices > Google > Google Satellite (or Google Road).
+
+Locate Area: Go to google maps > search for area you want to create the vector layer for > eg. for Borivali station(search for it on maps and copy the cords) > page the coords in QGIS (at bottom)
+
+
+======================================Phase 2: Create Your Layers (The Empty Containers) ===============================================================
+
+Before you can draw, you need files to store the drawings. Always check how many layers the question requires.
+
+Go to Layer > Create Layer > New Shapefile Layer. > File Name: Give it a clear name (e.g., Railway_Line).
+
+Geometry Type: Select the correct shape!
+
+Points: For specific locations (Stations, Trees, ATMs).
+
+Lines (LineString): For routes (Railways, Roads, Rivers).
+
+Polygons: For areas (Buildings, Lakes, Wards).
+
+Click OK.
+
+
+Repeat this process until you have all the required layers in your Layers Panel.
+
+
+==================================================== Phase 3: Digitization (Drawing the Map) =============================================================================
+
+This is where you actually trace the real-world features.
+
+Select the layer you want to draw on from the Layers Panel.
+
+Click Toggle Editing (the yellow pencil icon in the top toolbar).
+
+Click Add Feature (the icon right next to the pencil; its look changes based on if it's a point, line, or polygon).
+
+Draw:
+
+Lines/Polygons: Left-click along the path or border. Right-click when you are done to finish the shape. Provide an ID (like 1) and hit OK.
+
+Points: Just left-click exactly where the point belongs.
+
+Save: Click the Save Layer Edits icon (floppy disk with a pencil).
+
+Click Toggle Editing again to turn it off. Never forget to turn off editing before moving to the next layer!

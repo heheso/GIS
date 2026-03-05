@@ -1,0 +1,62 @@
+=========================================================== Phase 1: Setup (Create Vector Data & Database) – 30 Marks ==============================================================
+
+1. Create Your Four Layers:
+
+Go to Layer > Create Layer > New Shapefile Layer...
+
+ - Layer 1: Hospitals (Geometry: Point) - Add a whole number field Hosp_ID.
+
+ - Layer 2: ATMs (Geometry: Point) - Add a whole number field ATM_ID.
+
+ - Layer 3: Streets (Geometry: Line) - Add a text field Name.
+
+ - Layer 4: City_Wards (Geometry: Polygon) - Add a text field Ward_Name.
+
+---------------------------- Digitize and Populate the Database:
+
+- Toggle editing and draw 2 or 3 large City_Wards polygons.
+
+ - Switch to the ATMs layer and drop several points inside the different wards.
+
+ - Switch to the Hospitals layer and drop a few points around the map.
+
+ - Draw some Streets connecting the areas.
+
+Crucial: Open the Attribute Table for each layer and fill in the IDs and Names you just created. You must have IDs for the Distance Matrix to work. Save all edits.
+
+
+==================================================== Phase 2: Analytical Tools – 10 Marks ===============================================================
+
+A) Distance Matrix
+The Concept: This calculates the straight-line distance from every single point in Layer A to every single point in Layer B.
+- Go to the top menu, click Vector > Analysis Tools > Distance Matrix.
+
+Parameters:
+
+ - Input point layer: Select Hospitals.
+
+ - Input unique ID field: Select Hosp_ID.
+
+ - Target point layer: Select ATMs.
+
+ - Target unique ID field: Select ATM_ID.
+
+ - Output matrix type: Choose Linear (N*k x 3) distance matrix. >   Click Run and close the dialog.
+
+The Result: A new tabular layer will appear in your Layers Panel. Right-click it and open the Attribute Table. You will see a neat list showing the exact distance from every hospital to every ATM!
+
+
+B) Points in Polygon
+The Concept: This tool counts exactly how many point features (like ATMs) fall inside each polygon boundary (like City Wards). It is the spatial equivalent of a "Group By" function in SQL or a Pandas aggregation.
+
+ - Go to Vector > Analysis Tools > Count Points in Polygon. 2.  Parameters:
+
+ - Polygons: Select City_Wards.
+
+ - Points: Select ATMs.
+
+ - Count field name: It defaults to NUMPOINTS. You can leave it as that or rename it to ATM_Count.  >  Click Run and close the dialog.
+
+The Result: QGIS will generate a brand new Polygon layer on your map called "Count".
+
+Right-click this new "Count" layer and select Open Attribute Table. You will see your original Ward names, but now there is a shiny new column at the end showing exactly how many ATMs are inside each ward!

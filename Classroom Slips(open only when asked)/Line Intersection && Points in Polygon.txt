@@ -1,0 +1,60 @@
+============================================= Phase 1: Setup & Digitization (Vashi to Airoli) – 20 Marks ==============================================================
+
+YOU WILL BE WITHER TOLD TO CREATE VECTOR LAYER OF YOUR OWN OR FOR GIVEN RAILWAY ROUTE.
+
+Go to Layer > Create Layer > New Shapefile Layer... CREATE LAYERS AS TOLD OR YOUR OWN
+
+Layer 1: Railway_Route (Geometry: LineString). Add field: Route_Name (Text).
+
+Layer 2: Major_Roads (Geometry: LineString). Add field: Road_Name (Text). (We desperately need this second line layer so we have something to intersect with the railway!)
+
+Layer 3: Stations (Geometry: Point). Add field: Station_Nm (Text).
+
+Layer 4: Navi_Mumbai_Nodes (Geometry: Polygon). Add field: Node_Name (Text). (These will be the big "container" boundaries for Vashi, Turbhe, etc.)
+
+
+Digitize and Populate: [EG OF RAILWAY ROUTE]
+
+Toggle editing and trace the Railway_Route from Vashi to Airoli.
+
+Switch to Major_Roads and draw 2 or 3 roads that physically cross over your railway line (like the Vashi flyover or the Palm Beach Road extension).
+
+Draw the Navi_Mumbai_Nodes polygons so that they completely surround the different stations.
+
+Drop the Stations points exactly where they belong inside those polygons.
+
+Crucial: Open the Attribute Table for each layer and type in the names. Save all edits and stop toggling.
+
+
+================================================== Phase 2: Analytical Tools – 20 Marks =========================================================================
+
+A) Line Intersection
+The Concept: This tool takes two different line layers, finds the exact geographic coordinates where they cross each other, and generates a brand new Point layer at those exact crossing locations. Urban planners use this to identify level crossings or overpass locations.
+
+Action: On the top menu bar, click Vector > Analysis Tools > Line intersections. 2.  Parameters:
+
+Input layer: Select Railway_Route.
+
+Intersect layer: Select Major_Roads.
+
+Input fields to keep: Leave blank (it will keep all data).
+
+Run: Click Run and close the dialog.
+
+The Result: Look at your map canvas. You will see a brand new point automatically generated at the exact spot where your road line crossed your railway line! If you open its attribute table, you will see it merged the data from both the road and the railway into one row.
+
+
+B) Points in Polygon
+The Concept: You've used this one before! It counts exactly how many points fall inside a polygon boundary and creates a new layer with that count attached as a number.
+
+Action: Go to Vector > Analysis Tools > Count Points in Polygon. 2.  Parameters:
+
+Polygons: Select Navi_Mumbai_Nodes.
+
+Points: Select Stations.
+
+Count field name: Name it something logical like Total_Stations.
+
+Run: Click Run and close the window.
+
+The Result: A new polygon layer called "Count" will appear. Right-click it, select Open Attribute Table, and show the examiner how each Navi Mumbai node now has a number showing exactly how many stations are inside it.

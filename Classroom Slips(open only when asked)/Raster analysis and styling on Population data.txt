@@ -1,0 +1,48 @@
+Question: Demonstrate basic raster analysis and styling. Use population density grid data.**
+
+
+Raster Data:** Unlike shapes, a raster is a continuous grid of pixels (like a digital photograph). In a "population density grid," every single pixel contains a number representing how many people live in that specific square area.
+
+
+============================================================== Phase 1: Load the Raster Data =========================================================================
+
+1. **Add the Layer:**
+* *Action:* Go to **Layer** > **Add Layer** > **Add Raster Layer... > Browse to the folder, select the population dataset (e.g., `Mumbai_Population.tif`), and click **Add**.
+* *Result:* A grayscale blocky image will appear on your screen.
+
+
+================================================================== Phase 2: Raster Styling (Making it readable) ==========================================================
+
+We need to apply a color gradient so the numbers make visual sense.
+
+1. **Open Symbology:**
+ - Right-click your population raster layer in the Layers Panel and select **Properties**.
+ - Go to the **Symbology** tab on the left. 2.  **Apply Pseudocolor:**
+ - At the very top, change the **Render type** from *Singleband gray* to **Singleband pseudocolor**.
+ - Go to the **Color ramp** dropdown. Choose a logical color scheme, like **Reds** or **Magma** (where light colors mean low population, and dark colors mean high population).
+ - Min: 0 && Max: 240
+
+2. **Classify and Apply:**
+ - Click the **Classify** button at the bottom. You will see values populate in the white box, mapping numbers to colors.
+ - Action:* Click **OK**.
+ - Result:* Your map will instantly transform into a beautiful heat map showing population clusters!
+
+
+==================================================================== Phase 3: Basic Raster Analysis (The Raster Calculator) ===========================================================
+
+Now for the "Analysis" part. Let's say we want to isolate only the highly dense areas (e.g., pixels where the population is greater than 1000).
+
+1. Open the Raster Calculator:
+ - On the very top menu bar, click **Raster** > **Raster Calculator...**
+2. Set the Output:
+ - Look for the **Output layer** box at the top right. Click the three dots (`...`) and save the new file as `High_Density_Areas.tif` in your practical folder.
+
+3. **Write the Mathematical Expression:**
+ - In the top left box (Raster Bands), double-click your population layer. It will drop into the large Expression box at the bottom.
+ - Type:  `> 1000` right next to it.
+ - "poppuaiton-data" > '1000` / 100
+
+
+3. **Run the Analysis:**
+Click **OK**.>  A brand new layer will appear! 
+CHANGE THE COLORRAMP IF THE O/P IS NOT VISIBLE 

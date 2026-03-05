@@ -1,0 +1,111 @@
+[IF THE LAYER IS ALREADY PORVIDED NO NEED TO PERFORM PART 1]
+
+============================================================== Part 1: The Setup (Create 5 Layers) – 25 Marks ==================================================================
+
+
+**YOU WILL EITHER BE TOLD TO CREATE A MAP OR TO CREATE YOUR OWN VECTOR DATA WITH DATABASE **
+
+
+Go to Layer > Create Layer > New Shapefile Layer... Create the shapefiles for the given data :
+
+ - Land_Parcels (Polygon) - Add an attribute Parcel_ID (Whole Number).
+
+ - Water_Bodies (Polygon) - Add an attribute Name (Text).
+
+ - Main_Roads (Line) - Add an attribute Road_Name (Text).
+
+ - Railway_Tracks (Line) - Add an attribute Type (Text).
+
+ - Hospitals (Point) - Add an attribute Hosp_Name (Text).
+
+
+Digitize with Intent (Crucial Step!):
+
+Toggle editing and draw your shapes on the map with these rules so your spatial queries actually have something to find:
+
+ - For "Touches"[IF YOU CREATED YOUR OWN SHAPE FILES]: 
+	====Step 1: Turn on the Snapping Magnet: Right-click anywhere on the empty gray space of your top toolbar (where all your icons are) > check the box of Snapping Toolbar. A new 	toolbar with a magnet icon will appear. > Click the Magnet Icon > Right next to the magnet icon, set these specific dropdowns:
+ 	- Change the first dropdown to All Layers.  - Change second dropdown to Vertex and Segment.  - Keep the distance to something like 12px (pixels).
+
+	====Step 3: Draw the Shapes Properly: 
+ 	- Select your Land_Parcels layer and click Toggle Editing (the yellow pencil) > Click Add Polygon Feature.
+ 	- Do the same with Water_Body polygon > You will suddenly see a pink/magenta square or crosshair appear! This means the magnet has caught the edge.
+ 	- Click exactly when that pink square is visible. Draw your shape along that edge.
+ 	- Save Edits and turn off Toggle Editing.
+
+ - For "Crosses": Draw a Main_Road line so that it cuts completely through one of your Land_Parcels.
+
+ - For "Disjoint": Drop a few Hospital points far away from the Water_Bodies (so they don't touch or overlap at all).
+
+ - For "Contains" and "Within" to work, one feature must be completely swallowed by another. Select your Hospitals layer and click Toggle Editing.
+	Drop a new hospital point directly inside the center of one of your Land_Parcels polygons. > Save Edits and turn off toggling.
+
+
+============================================================= Part 2: Fire Spatial Queries – 15 Marks ===============================================================
+
+A) The "Touches" Query
+Concept: Finds features that share a boundary but do not overlap.
+ - Go to the top menu, click Vector > Research Tools > Select by Location.
+
+ - Parameters: Select features from: Choose Land_Parcels > Where the features (geometric predicate): Check the box for touch > By comparing to the features from: Choose Water_Bodies.
+
+ - Click Run, then Close.
+
+Result: Look at your map. Any land parcel that shares a border with the water body will now be highlighted in yellow!
+
+B) The "Crosses" Query
+Concept: Finds line features that cut through polygon features (or other lines).
+Action: Open Vector > Research Tools > Select by Location again.
+
+Parameters:
+
+ - Select features from: Choose Main_Roads.
+
+ - Where the features (geometric predicate): Check the box for cross. (Make sure 'touch' is unchecked).
+
+ - By comparing to the features from: Choose Land_Parcels.
+
+ - Run: Click Run, then Close.
+
+Result: Only the roads that physically cut across your land parcels will turn yellow.
+
+C) The "Disjoint" Query
+Concept: Finds features that have absolutely zero spatial interaction (they don't touch, cross, or overlap).
+
+Action: Open Vector > Research Tools > Select by Location.
+
+Parameters:
+
+ - Select features from: Choose Hospitals.
+
+ - Where the features (geometric predicate): Check the box for are disjoint.
+
+ - By comparing to the features from: Choose Water_Bodies.
+
+ - Run: Click Run, then Close.
+
+Result: All the hospitals that are safely far away from the water bodies will highlight in yellow.
+
+D) The "Contains" Query : "Which big land parcel holds a hospital inside it?"
+
+ - Go to Vector > Research Tools > Select by Location.
+
+ - Select features from: Choose Land_Parcels. (This is what you want to highlight).
+
+ - Geometric predicate: Check the box for contain.
+
+ - By comparing to: Choose Hospitals.  > Click Run.
+
+Result: The large land parcel polygon that has the hospital inside it will light up yellow.
+
+E) The "Within" Query:  "Which hospital is trapped inside a land parcel?"
+
+ - Open Select by Location.
+
+ - Select features from: Choose Hospitals. (Now we want the point to highlight).
+
+ - Geometric predicate: Check the box for are within.
+
+ - By comparing to: Choose Land_Parcels.  > Click Run.
+
+Result: The specific hospital point you dropped inside the parcel will turn yellow.

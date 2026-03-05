@@ -1,0 +1,37 @@
+
+=========================================================== Phase 1: Setup and Digitization (Your Workbench) ====================================================
+
+1. **Load the Picture:** [**IF PROVIDED** **IF NOT**:JUST CREATE YOUR OWN MAP OR USE QUICKMAP SERVICES]
+* Go to **Layer** > **Add Layer** > **Add Raster Layer...** * Browse to wherever you saved the image 
+
+2. **Create the Two Required Layers:**
+ Go to **Layer** > **Create Layer** > **New Shapefile Layer...** [CREATE THE LAYER MENTIONED iN THE SLIP]
+ **Layer 1:** Name it `Broad_Gauge` (Geometry: **LineString**).
+ **Layer 2:** Name it `Major_Junctions` (Geometry: **Point**). Add a text field called `Name` so you can label them later.
+
+3. **Digitize the Features:**
+* Toggle editing on `Broad_Gauge` and trace the specific red lines shown on the map (the broad gauge lines). Save and stop editing.
+* Toggle editing on `Major_Junctions` and drop points *only* on the cities listed in the prompt: Ahmedabad, Baroda, Bharuch, Ratlam, Nagda, Palanpur, Jalgaon. Type their names into the attribute table as you create them. Save and stop editing.
+
+
+============================================================= Phase 2: The Print Layout (The Output) ================================================================
+
+1. **Open the Print Layout:**
+ - In the main QGIS menu bar, go to **Project** > **New Print Layout... > A tiny box will pop up asking for a title. Name it something like "Western_Railway_Map" and click OK.
+ - A completely new, blank white window will open. This is your sheet of paper. 
+2. **Add Your Map to the Paper:**
+ - On the left-hand toolbar, click the **Add Map** button (it looks like a little scroll with a plus sign).
+ - Click and drag a large rectangle on your blank white canvas. When you let go of the mouse, your digitized map from the main QGIS window will magically appear inside the box!
+
+
+3. **Add the Legend:**
+ - Click the **Add Legend** button on the left toolbar (it looks like a tiny list with three colored boxes).
+ - Click and drag a smaller box in an empty corner of your map (usually bottom right or bottom left). The legend will generate automatically based on your layer names.
+
+4. **Add the North Arrow:**
+ - Click the **Add North Arrow** button on the left toolbar.
+ - Click and drag a small square, typically in the top right corner. A default north arrow will appear.
+
+4. **Export the Final Map:**
+* *Action:* Go to the top menu bar of the Print Layout window, click **Layout** > **Export as PDF/IMAGE...** (or Export as Image).
+* *Action:* Save it to your practical folder.

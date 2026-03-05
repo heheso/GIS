@@ -1,0 +1,47 @@
+================================================================ Phase 1: Setup & Database Creation – 30 Marks ==================================================================
+
+Create Your Five Layers:
+
+Go to Layer > Create Layer > New Shapefile Layer...
+
+ - Layer 1: City_Wards (Polygon). Add field: Population (Type: Whole Number). (We will use this for Statistics).
+ - Layer 2: Schools (Point). Add field: School_Type (Type: Text Data). (We will use this for Unique Values).
+ - Layer 3: Hospitals (Point). Add field: Bed_Count (Type: Whole Number).
+ - Layer 4: Roads (Line). Add field: Road_Class (Type: Text Data).
+ - Layer 5: Water_Bodies (Polygon). Add field: Name (Type: Text Data).
+
+-------------------------- Digitize and Populate (Crucial Step):
+
+Toggle editing and draw some features for each layer.
+
+ - Important for Schools: Make sure you type repeating categories for your School_Type. For example, create 5 schools and label them: "Private", "Public", "Public", "Private", "International".
+
+ - Important for Wards: Enter random, realistic numbers for the Population (e.g., 50000, 75000, 120000).
+
+ - Save all edits and turn off the toggle editing pencil.
+
+
+=========================================================== Phase 2: Analytical Tools – 10 Marks ==============================================================
+
+A) Basic Statistics: This tool looks at a single numeric column in your database and instantly calculates the sum, mean (average), median, minimum, maximum, and standard deviation.
+
+Action: Go to the top menu, click Vector > Analysis Tools > Basic statistics for fields.
+
+Parameters:
+
+- Input Layer: Select City_Wards.
+- Field to calculate statistics on: Select Population. (Notice how QGIS only lets you select numeric fields here!).
+ - Run: Click Run.
+
+QGIS will generate a temporary file and display an states.
+
+
+B) List Unique Values: If you have a database of 10,000 roads, you don't want to scroll through them to figure out what the road types are. This tool scans the text column and gives you a clean list of every unique category it finds, removing all duplicates.
+
+Action: Go to Vector > Analysis Tools > List unique values. 2.  Parameters:
+
+ - Input Layer: Select Schools.
+ - Target field: Select School_Type.
+ - Click Run and close the dialog.
+
+The Result: A new temporary table layer will appear in your Layers Panel. Right-click it and select Open Attribute Table. Instead of seeing all your individual schools, you will just see a crisp, clean list of your unique categories: "Private", "Public", and "International".
