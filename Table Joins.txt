@@ -16,15 +16,16 @@ Table joins
 	select CSV
 	No geometry
 	Change type of D001 to Integer(64)
-4. Double Click the ca_tracts_pop layer and go to Join tab
+4. Double Click the tl_2013_06_tract layer and go to Join tab
 	Click "+" (Add new Join).
 	Select:
 		Join Layer: ca_tracts_pop
 		Join Field: Matching field (GEO.id2)
 		Target Field: Corresponding field in tract layer(GEOID)
 	Click OK
-5. Double Click the ca_tracts_pop layer and go to Symbolody tab
+5. Double Click the tl_2013_06_tract layer and go to Symbolody tab
 	Choose Graduated.
 	Select Population field (D001).
 	Choose classification method as equal interval.
+
 	Click Ok
