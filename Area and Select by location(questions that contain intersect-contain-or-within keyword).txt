@@ -1,0 +1,33 @@
+Add Column Area and Calculate Area
+==================================
+Steps:
+Right click on layer -> Open Attribute Table
+Click Field Calculator
+Create new field
+Name = Area
+Type = Decimal
+Use Geometry → Area function  i.e., $area (expression)
+Now each garden will have its area value.
+
+Show Largest Field
+
+Open Attribute Table
+Sort column Area
+Click Sort Descending
+The first record = largest Field
+
+Select By Location (questions that contain intersect/contain/within keyword)
+===================
+Vector → Research Tools → Select by Location
+Set the options:
+Select features from: Layer 1(From question)
+Where the features: intersect/are within/contain
+By comparing to features from: Layer2(From question)
+Click Run
+
+for do not intersect 
+first find intersect then,
+Open Attribute Table of that layer
+Click Invert Selection
+
+

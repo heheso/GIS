@@ -1,0 +1,48 @@
+
+Go to Layer -> Add Layer ->Add Delimited Text Layer
+Browse and select EarthQuakeDataBase.txt
+custom delimiter: tab
+point coordinates: x as longitude and y as latitude
+
+1. Format “Tsunami” with Red Colour and Others Black
+Steps
+Right click sample layer
+Click Properties → Symbology
+Change style to Categorized
+choose Tsunami column(mentioned in attribute table) in value
+classify or add manually by "+" and giving value for each 
+
+2. Show the Place with Highest Death Value
+Steps
+Right click layer → Open Attribute Table
+Find column Death
+Click Sort Descending
+The top row = place with highest deaths
+You can select that record to highlight it on the map
+
+3. Show Places Where Tsunami Occurred for Highest Time (Hours)
+Steps
+Open Attribute Table
+Click Select by Expression
+Use condition like:
+	Tsunami Column = 'Tsunami'
+Sort Hours column in descending order
+The top records show tsunami events with longest duration
+
+4. Show All Natural Calamities that Occurred in India
+Steps
+Open Attribute Table
+Click Select by Expression
+Condition:
+	Country = 'India'
+Click Select Features
+
+5. Show Places Where Tsunami Occurred Between 2000 and 2019
+Steps
+Open Attribute Table
+Click Select by Expression
+Use condition:
+	Tsunami column = 'Tsunami' AND
+	Year >= 2000 AND
+	Year <= 2019
+Click Select Features

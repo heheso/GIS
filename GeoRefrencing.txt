@@ -1,0 +1,35 @@
+Web -> OpenLayerPlugin -> OpenStreetmap -> OpenStreetMap.
+In the OSM place search type:
+Girgaum Chowpatty Beach/Taj Mahal/Statue Of Unity/University of Mumbai Fort Campus/University of Mumbai Kalina Campus/Churchgate
+
+Make sure to have aerial files in local or else use  plugin QuickMapService
+Web -> QuickMapService -> Google -> Google Satellite
+In the OSM place search type:
+Girgaum Chowpatty Beach/Taj Mahal/Statue Of Unity/University of Mumbai Fort Campus/University of Mumbai Kalina Campus/Churchgate
+
+Layer -> Gerorefrencer
+Click Open Raster and load the aerial image.
+Click Add Point tool
+Click a clear landmark on the image
+After clicking the point, a window opens
+From Map Canvas
+Then click the same location on the OpenStreetMap layer
+Repeat this for at least 4–6 points
+
+Click Settings -> Transformation Settings
+Option			Value
+Transformation Type	Polynomial 1
+Resampling Method	Nearest Neighbour
+Target SRS		WGS 84 (EPSG:4326)
+Output Raster		Save new file
+
+Click OK
+
+Start Georeferencing
+
+========================================================
+
+if georefrencing comes for Mumbai/Maharashtra/India/any map
+
+Load IND_adm0.shp vector layer 
+and georefrence the map image on the vector Layer
