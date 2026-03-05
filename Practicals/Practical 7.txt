@@ -11,7 +11,7 @@ A) Table joins
 	To assign correct data types, create a sidecar file with extension (.csvt).
 3. Create CSVT file:
 	Create a new text file.
-	Add one row specifying data types ("String","String","String","String","String","Integer", ).
+	Add one row specifying data types ("String","String","String","String","String","Integer").
 	Save the file as:
 		ca_tracts_pop.csvt
 	Save it in the same folder as the CSV file.
@@ -86,3 +86,4 @@ D) Performing spatial Queries
 	Where features intersect: ne_10m_populated_places_simple
 	Click Run
 5. Rivers will appear in 2 colors
+
