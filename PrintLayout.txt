@@ -1,0 +1,43 @@
+Open Print Layout
+
+In QGIS, go to Project -> New Print Layout
+Give a name (example: Practice_Map)
+
+Add Map to Layout
+
+Click Add Map tool.
+Drag a rectangle on the page.
+Your map with all layers will appear in that frame
+
+1. Add North Pointer
+
+Click Add Picture tool.
+Draw a small box on the layout.
+In the Item Properties panel:
+in svg image
+Choose north arrow symbol.
+
+2. Add Legend
+Click Add Legend.
+Draw a box on the layout.
+
+Add Scale Bar
+Click Add Scale Bar.
+Draw it under the map.
+
+
+4. Export Map as JPEG with 1200 DPI
+
+In Print Layout, click
+Layout → Export as Image
+Choose format: JPEG
+In settings:
+Resolution = 1200 dpi
+Save the file.
+
+if they ask for specific symbol ten
+Right click on Layer
+Click Properties -> Symbology
+Choose SVG Marker
+
+and for separate point symbol can use categorized instead of single symbol, if asked
