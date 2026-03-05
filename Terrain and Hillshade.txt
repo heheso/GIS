@@ -1,0 +1,29 @@
+Terrain Data and Hillshade Analysis
+====================================================================================================== 
+1. Add Raster Layer 
+	10n060e_20101117_gmted_mea300.tif
+2. Locate Mt. Everest: 
+	At the bottom of QGIS, enter the coordinates 27.99, 86.93 and set the Scale to 1:1,000,000
+3. Raster -> Extraction -> Clip Raster by Extent
+	Select Use Canvas Extent to clip the visible area
+	Save it and click Run
+-----------------------------
+Contour
+-----------------------------
+4. Raster -> Extraction -> Contour
+	Input layer: Select your clipped raster
+	Interval: Set the interval between contour lines to 100.0 meters
+	Attribute name: Ensure it is set to ELEV
+	Click Run
+5. Labeling: Right-click the new Contour layer -> Properties -> Labels. Set to Single labels using the ELEV field
+6. Right-click the contour layer in the Layer Panel and select Open Attribute Table
+	Arrange the table in descending order based on the value of “ELEV” column
+	Select the row with highest elev and click on zoom map to selected rows(magnifying glass)
+-----------------------------
+Hillshade
+-----------------------------
+7. Raster -> Analysis -> Hillshade
+	Input Layer: Select your clipped raster
+	Click Run
+8. It will come in b/w, so go to symbology 
+	select singleband pseudocolor and choose appropriate color ramp

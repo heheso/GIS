@@ -1,0 +1,15 @@
+Re-projecting Vector Data, US
+======================================================================================================
+1. Add Vector Layer
+	ne_10m_admin_0_countries.zip
+2. Layer -> Save As
+	Format: ESRI Shapefile
+	Click the browse button ... to select a folder and name the file (e.g., My_Projected_World_map.shp)
+	Set CRS: Click the CRS globe icon and search for/select North_America_Albers_Equal_Area_Conic (EPSG: 102008)
+	Click Ok
+3. Right click on shp layer and select layer CRS -> project CRS from layer
+4. Add Raster Layer
+	MiniScale_(standard)_R17.tif
+5. Project -> Properties and select the CRS tab
+	Select OSGB 1936 / British National Grid (EPSG: 27700)
+	Click Apply and OK

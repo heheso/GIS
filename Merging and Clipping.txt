@@ -1,0 +1,12 @@
+Raster Merging and Clipping
+======================================================================================================
+1. Add Raster Layer
+	Select multiple .tif raster images (India 0-5)
+2. Raster -> Miscellaneous -> Merge
+	Click the (...) button next to Input layers, select all the tiles, and click OK
+	Save it (e.g., Merge_Files.tif) and click Run
+3. Add the India administrative boundary file (IND_adm0.shp) as a vector layer and style it to outline
+4. Go to Raster -> Extraction -> Clip Raster by Mask Layer
+	Input layer: your merged raster image 
+	Mask layer: IND_adm0
+	Save it (e.g., Clipped_File.tif) and press Run

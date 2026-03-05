@@ -1,0 +1,18 @@
+Performing spatial Queries/Buffer
+======================================================================================================
+1. Add Vector Layers
+	ne_10m_populated_places_simple.shp
+	ne_10m_rivers_lake_centerlines.shp
+2. Go to Project -> Properties -> CRS
+	Set CRS to World_Azimuthal_Equidistant (EPSG:54032)
+	Click OK
+3. Go to Vector -> Geoprocessing Tools -> Buffer.
+	Select ne_10m_rivers_lake_centerlines as input
+	Set distance 0.02
+	Save as river_buffered
+	Click Run
+4. Go to Vector -> Research Tools -> Select By Location.
+	Select features from: river_buffered
+	Where features intersect: ne_10m_populated_places_simple
+	Click Run
+5. Rivers will appear in 2 colors

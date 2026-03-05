@@ -1,0 +1,18 @@
+Calculating Line Lengths and Statistics
+======================================================================================================
+1. Add Vector Layer
+	IND_rails.shp
+	IND_adm0.shp
+	set properties as you wish, for IND_adm0, outline is recommended and decrease width while for IND_rails choose dark color and decrease width
+2. Right click on IND_rails and select open Attribute Table
+3. Open Field Calculator(fourth last, you will get name by hovering it)
+	output field name: Track_Len
+	output field type:decimal number
+	precision: 2
+	expression: $length / 1000
+	click ok
+4. Go to Vector -> Analysis Tools -> Basic Statistics for Fields
+	Input Layer: IND_rails 
+	Field: Track_Len
+	Click run
+5. Open the resulting output.html(i.e. in the log tab) to find the Sum, which represents the total length of railway tracks (e.g., 60,479.32 KM)

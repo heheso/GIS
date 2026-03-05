@@ -1,0 +1,39 @@
+Interpolating Point Data
+======================================================================================================
+1. Add Vector Layer
+	Arlington_Soundings_2007_stpl83.shp
+	Boundary2004_550_stpl83.shp
+	Islands_2004_550_stpl83.shp
+2. Processing -> Toolbox
+	1. TIN Interpolation( in Interpolation)
+		a)Vector Layer: Arlington_Soundings_2007_stpl83
+		  Interpolation attr: Elevation
+		  Press +(Input layer)
+		  type: Points
+		b)Vector Layer: Islands_2004_550_stpl83
+		  Interpolation attr: Elevation
+		  Press +(Input layer)
+		  type: Break Lines 
+		Extent -> Calculate from Layer -> Boundary2004_550_stpl83
+		Pixel x: 5
+		Save (e.g., Elevation_tin)
+		Click run
+	2. Clip raster by mask layer (in GDAL -> Raster extraction)
+		Mask Layer: Boundary2004_550_stpl83
+		Save (e.g., Elevation_tin_clipped)
+		Click Run
+3. Double click Elevation_tin_clipped layer and go to symbology tab
+	Select Singleband Pseudocolor
+	Classify
+	Apply and ok 
+4. Processing -> Toolbox
+	1. Contour (in GDAL -> Raster extraction)
+		Input Layer: Elevation_tin_clipped
+		Interval: 5
+		Save (e.g., Elevation_tin_clipped_contour)
+		Click Run
+5. Double click Elevation_tin_clipped layer and go to Label tab
+	Select single labels
+	Select ELEV as value
+	In Placement -> Mode: Curved
+	Apply and ok

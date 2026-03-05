@@ -1,0 +1,18 @@
+Nearest Neighbor Analysis
+======================================================================================================
+1. Add Delimited Text Layer
+	EarthQuakeDatabase.txt
+	Custom delimiter: tab
+	Point coordinate: x longitude, y latitude
+2. Layer -> Add Layer -> Add Vector Layer
+	ne_10m_admin_0_countries.zip
+3. Processing -> Toolbox
+	1. Remove null geometries( in Vector Geometry)
+		Select also remove empty geometries
+		Click run
+	2. Distance to nearest hub(line to hub)( in Vector Analysis)
+		destination hub: ne_10m_admin_0_countries
+		hub layer name attribute: name
+		unit: km
+		Save it
+		Click Run

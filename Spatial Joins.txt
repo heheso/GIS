@@ -1,0 +1,16 @@
+Spatial joins
+======================================================================================================
+1. Go to Layer -> Add Layer -> Add Vector Layer.
+	nybb.shp
+	OEM_NursingHomes_001.shp
+2. Go to Vector -> Data Management Tools -> Join Attributes by Location
+	Input Layer: nybb (Borough boundaries)
+	Join Layer: OEM_NursingHomes_001
+	Geometric Predicate: Intersects (or contains)
+	Join Type: one to one
+	Fields to add: select all 27 layers and press ok
+	Choose output file location.
+	Click Run
+3. Use Identify Feature tool 
+	Click on any borough.
+	View joined nursing home data

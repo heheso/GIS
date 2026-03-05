@@ -1,0 +1,30 @@
+Sampling Raster Data using Points or Polygons 
+======================================================================================================
+1. Add Raster Layer
+	us.tmax_nohads_ll_20140525_float.tif
+2. Add Delimited Text Layer
+	2013_Gaz_ua_national.txt
+	Custom delimiter: tab
+	Point coordinate geometry type, x intptlong, y intptlat
+3. Processing -> Toolbox
+	1. Simple Raster Values( in Raster Analysis)
+		raster: layer us.tmax_nohads_ll_20140525_float
+		Output Column: tmax_
+		Click run
+4. Remove both sampled and 2013_Gaz_ua_national layer
+5. Add Vector Layer
+	tl_2018_us_county.zip
+6. Processing -> Toolbox
+	1. Zonal Statistics( in Raster Analysis)
+		raster layer: us.tmax_nohads_ll_20140525_float
+		Output Column: tmax_mean
+		select on mean for statistics to calculate
+		Click run
+7. Use Identify Feature tool 
+	Click on any area.
+	View tmax_mean at end
+8. Double click Zonal Statistics layer and go to symbology tab
+	Select Graduated and tmax_mean as value
+	Select color to red
+	Classify
+	Apply and ok

@@ -1,0 +1,16 @@
+Points in polygon analysis
+======================================================================================================
+1. Layer -> Add Layer -> Add Delimited Text Layer
+	EarthQuakeDatabase.txt
+	custom delimiter: tab
+	point coordinate: x longitude, y latitude
+2. Layer -> Add Layer -> Add Vector Layer
+	ne_10m_admin_0_countries.zip
+3. Go to Vector -> Analysis Tools -> Count Points in Polygon
+	Polygon Layer: Countries
+	Points Layer: Earthquake data
+	Choose output location
+	Click Run
+4. Use Identify Feature tool 
+	Click on India
+	View numpoint row at end

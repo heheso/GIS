@@ -1,0 +1,25 @@
+Adding and Styling Raster Layers
+======================================================================================================
+1. Add Raster Layers
+	Select the Gridded Population for the years 1990 and 2000
+		glds00ag60.asc
+		glds00ag90.asc
+2. Double-click the glds90ag60.asc layer and go to symbology tab
+	Set Render type to Singleband pseudocolor
+	Set min to 0 and max to 240
+	Choose a Color ramp (e.g., YlOrRd) and set Interpolation to Linear
+	Set the Mode to Continuous and click Classify, then press Apply
+Repeat these styling steps for the glds00ag60.asc layer 
+3. Raster -> Raster Calculator
+	In Raster Calculator Expression box, enter the formula: "glds00ag60@1" - "glds90ag60@1"
+	Select an output location and name the file (e.g., Pop_Diff.tif)
+	Ensure the Output format is set to GeoTIFF and click OK
+4. Double-click the Pop_Diff layer and go to Symbology
+	Set Render type to Singleband pseudocolor and Interpolation to Discrete
+	Set min to -20000 and max to 6000
+	|Value |Color  |Label   |
+	|-20000|Black  |No Data |
+	|-10   |Red    |Negative|
+	|10    |Yellow |Neutral |
+	|6000  |Blue   |Positive|
+	Click ok

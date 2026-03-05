@@ -1,0 +1,24 @@
+Georeferencing Topo Sheets and Scanned Maps  
+======================================================================================================
+1. Add Vector Layer
+	IND_adm0.shp
+2. Zoom to mumbai
+3. Ensure that Georenfrencer is checked, if not install Georeferencer GDAL plugin. 
+4. Layer -> Georenfrencer
+5. File → Open Raster
+	Bombay_1909.jpg
+(step 6 not necessary to perform)
+6. Go to  Settings -> Transformation Settings
+	Set transformation type to thin plate spline
+	Set target CRS to EPSG 4044 Everest datum
+	Save as Bombay_modified.tif
+	Set resampling method to nearest neighbour
+	Click ok
+7. Go to Edit -> Add GCP Points
+	Click precisely on the identified point in the raster image
+	Click From Map Canvas to pick coordinates directly from the project
+	Repeat this for at least 4 points spread across the image for accuracy
+8. Go to  Settings -> Transformation Settings
+	Set target CRS to EPSG 4326 W84
+	Click ok
+9. Start Georefrencing

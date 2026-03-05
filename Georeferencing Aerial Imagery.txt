@@ -1,0 +1,22 @@
+Georeferencing Aerial Imagery
+======================================================================================================
+1. Web -> OpenLayersPlugin -> OpenStreetMap -> OpenStreetMap
+2. Project -> Properties and select the CRS tab
+	Select EPSG 3857
+	Click Apply and OK
+3. View -> Panels -> select OSM Place search
+4. Ensure that Georenfrencer is checked, if not install Georeferencer GDAL plugin. 
+5. Go to Layer -> Georenfrencer
+6. File -> Open Raster
+	GateWay_Aerial_Imagery.tif
+7. Go to Edit -> Add GCP Points
+	Click precisely on the identified point in the raster image
+	Click From Map Canvas to pick coordinates directly from the project
+	Repeat this for 4 points spread across the image for accuracy
+8. Go to  Settings -> Transformation Settings
+	Set transformation type to thin plate spline
+	Set target CRS to EPSG 3857 W84/Pseudo-Mercator
+	Save as GateWay_Aerial_Imagery_modified.tif
+	Set resampling method to nearest neighbour
+	Click ok
+9. Start Georefrencing

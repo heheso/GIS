@@ -1,0 +1,9 @@
+Working with Attributes
+======================================================================================================
+1. Add Vector Layer
+	ne_10m_populated_places_simple.zip.shp
+2. Right-click the layer in the Layer Panel and select Open Attribute Table
+	Click on the pop_max column to sort and find places with the highest population
+	Click the Select features using an expression button (epsilon symbol $\epsilon$)
+		pop_max > 100 and pop_max < 10000
+		pop_max > 100 and pop_max < 10000 and "sov0name" = 'India'

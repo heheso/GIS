@@ -1,0 +1,17 @@
+Digitizing Map Data 
+======================================================================================================
+1. Add Raster Layer 
+	Christchurch Topo50 map.tif
+2. Doble click on church layer and go to pyramid tab
+	Select all the resolutions offered in the Resolutions panel
+	Click Build pyramids
+	Click ok
+3. Settings -> More Options -> digitizing tab
+	Set the Default snap mode to vertex and segment
+	Click ok
+4. Layer -> Create Layer -> New Spatialite Layer
+	Set name for database(e. g., MySpatialDB)
+	Give name for the layer and choose appropriate geometry type
+	Set CRS to EPSG 4167
+	Add a field for Name attribute
+5. Add a road using line and 2 gardens using polygon (steps to draw given in pr 1)

@@ -1,0 +1,21 @@
+A) Making a Map (Print Layout) for pr 3
+======================================================================================================
+1. Go to Layer -> Add Layer -> Add Vector Layer
+	Select the files, style and overlay them properly
+		maharashtra_administrative.shp
+		maharashtra_coastline.shp
+		maharashtra_highway.shp
+		maharashtra_location.shp
+		maharashtra_natural.shp
+		maharashtra_poi.shp
+		maharashtra_water.shp
+2. Go to Project -> New Print Layout -> name it(e.g., practical_3A)
+3. Add Map and Lock Layers
+	go to Add Item -> Add Map and draw a box on the canvas
+	In the Item Properties tab, under Layers, check Lock layers and Lock styles for layers to prevent the layout from changing if you modify the main project
+4. Add Map Elements
+	Picture/Logo: Go to Add Item -> Add Picture, Choose an image from Search Directories and adjust the Image Rotation if needed
+	Inset Map (Overview): Add a second, smaller map. To highlight the area, go to Item Properties of map 1 -> Overviews, click the + icon, and set the Map frame 		to the main map (Map 2)
+	Labels: Go to Add Item -> Add Label. In Main Properties, type the text (e.g., "Mumbai Map"). You can also check Render as HTML to use HTML tags for 			formatting
+	Legend: Go to Add Item -> Add Legend
+	Scale Bar: Go to Add Item -> Add Scale Bar. Set the units to Kilometers and adjust segments as desired

@@ -1,0 +1,30 @@
+Table joins 
+======================================================================================================
+1. Vector Layer
+	tl_2013_06_tract.shp
+2. Prepare CSV file for proper data type:
+	The population field (D001) contains numeric values.
+	By default, CSV imports all fields as text.
+	To assign correct data types, create a sidecar file with extension (.csvt).
+3. Create CSVT file:
+	Create a new text file.
+	Add one row specifying data types "String", "String", "String", "String", "String", "Integer".
+	Save the file as: ca_tracts_pop.csvt
+	Save it in the same folder as the CSV file.
+3. Go to Layer -> Add Layer -> Add Delimited Text Layer.
+	ca_tracts_pop.csv
+	select CSV
+	No geometry
+	Change type of D001 to Integer(64)
+4. Double Click the ca_tracts_pop layer and go to Join tab
+	Click "+" (Add new Join).
+	Select:
+		Join Layer: ca_tracts_pop
+		Join Field: Matching field (GEO.id2)
+		Target Field: Corresponding field in tract layer(GEOID)
+	Click OK
+5. Double Click the ca_tracts_pop layer and go to Symbolody tab
+	Choose Graduated.
+	Select Population field (D001).
+	Choose classification method as equal interval.
+	Click Ok
